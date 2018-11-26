@@ -1,11 +1,12 @@
 package pl.sokolx.petclinic.services.map;
 
 import pl.sokolx.petclinic.model.Owner;
-import pl.sokolx.petclinic.services.CrudService;
+import pl.sokolx.petclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
+
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
@@ -22,12 +23,17 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     }
 
     @Override
-    public Owner save(Owner object) {
-        return super.save(object.getId(), object);
+    public Owner findById(Long id) {
+        return super.findById(id);
     }
 
     @Override
-    public Owner findById(Long id) {
-        return super.findById(id);
+    public Owner save(Owner object) {
+        return null;
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }
