@@ -1,17 +1,17 @@
 package pl.sokolx.petclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 import pl.sokolx.petclinic.model.Owner;
-import pl.sokolx.petclinic.model.Person;
 import pl.sokolx.petclinic.model.Vet;
 import pl.sokolx.petclinic.services.OwnerService;
 import pl.sokolx.petclinic.services.VetService;
 
+@Component
 public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
-
 
     public DataLoader(OwnerService ownerService, VetService vetService) {
         this.ownerService = ownerService;
